@@ -3,24 +3,13 @@ package main
 import (
 	"context"
 	"flag"
+	"github.com/jackc/pgx/v5/pgxpool"
 	"greenlight.yernar.com/internal/data"
+	"greenlight.yernar.com/internal/jsonlog"
+	"greenlight.yernar.com/internal/mailer"
 	"os"
 	"sync"
 	"time"
-)
-
-package main
-
-import (
-"context"
-"flag"
-"github.com/jackc/pgx/v5/pgxpool"
-"greenlight.yernar.com/internal/data"
-"greenlight.yernar.com/internal/jsonlog"
-"greenlight.yernar.com/internal/mailer"
-"os"
-"sync"
-"time"
 )
 
 const version = "1.0.0"
