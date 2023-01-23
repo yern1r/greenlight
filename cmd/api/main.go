@@ -61,7 +61,7 @@ func main() {
 	flag.StringVar(&cfg.env, "env", "development", "Environment (development|staging|production)")
 	// Use the value of the GREENLIGHT_DB_DSN environment variable as the default value
 	// for our db-dsn command-line flag.
-	flag.StringVar(&cfg.db.dsn, "db-dsn", os.Getenv("GREENLIGHT_DB_DSN"), "PostgreSQL DSN")
+	flag.StringVar(&cfg.db.dsn, "db-dsn", "postgres://greenlight:pa55word@localhost/greenlight?sslmode=disable", "PostgreSQL DSN")
 
 	// Read the connection pool settings from command-line flags into the config struct.
 	// Notice the default values that we're using?
@@ -81,9 +81,9 @@ func main() {
 	// with your own Mailtrap credentials.
 	flag.StringVar(&cfg.smtp.host, "smtp-host", "smtp.office365.com", "SMTP host")
 	flag.IntVar(&cfg.smtp.port, "smtp-port", 587, "SMTP port")
-	flag.StringVar(&cfg.smtp.username, "smtp-username", "211022@astanait.edu.kz", "SMTP username")
+	flag.StringVar(&cfg.smtp.username, "smtp-username", "211229@astanait.edu.kz", "SMTP username")
 	flag.StringVar(&cfg.smtp.password, "smtp-password", "", "SMTP password")
-	flag.StringVar(&cfg.smtp.sender, "smtp-sender", "Bakhtiyar Amanzhol <211022@astanait.edu.kz>", "SMTP sender")
+	flag.StringVar(&cfg.smtp.sender, "smtp-sender", "Ernar Elemesov <211229@astanait.edu.kz>", "SMTP sender")
 
 	flag.Parse()
 
